@@ -1,0 +1,37 @@
+[
+	{
+		"id": 1,
+		"name": "The Pragmatic Programmer",
+		"ticker": "TPP",
+		"price": 39.99,
+		"quantity": 10
+	},
+	{
+		"id": 2,
+		"name": "Clean Code",
+		"ticker": "CC",
+		"price": 34.99,
+		"quantity": 15
+	},
+	{
+		"id": 3,
+		"name": "Introduction to Algorithms",
+		"ticker": "ITA",
+		"price": 89.99,
+		"quantity": 5
+	},
+	{
+		"id": 4,
+		"name": "Design Patterns",
+		"ticker": "DP",
+		"price": 49.99,
+		"quantity": 7
+	},
+	{
+		"id": 5,
+		"name": "Refactoring",
+		"ticker": "RF",
+		"price": 44.99,
+		"quantity": 12
+	}
+]
