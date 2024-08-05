@@ -9,8 +9,10 @@ interface StockListProps {
 const StockList: React.FC<StockListProps> = ({ stocks }) => {
     return (
         <>
-            <h3>Stock</h3>
-            <div>
+            <div className="w-100 p-3">
+                <h3>Stock</h3>
+            </div>
+            <div className="w-100 p-3">
                 {stocks.map(stock => (
                     <StockItem key={stock.id} stock={stock} />
                 ))}
