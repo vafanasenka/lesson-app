@@ -1,5 +1,5 @@
 import React from 'react';
-import Book from '../models/book';
+import Book from '../../shared/types/book';
 
 interface StockItemProps {
     stock: Book;

@@ -1,8 +1,8 @@
 import './App.css';
 import data from './data/stocks.json';
-import StockList from './components/StockList';
+import StockList from './features/StockList/StockList';
 import { useEffect, useState } from 'react';
-import Book from './models/book';
+import Book from './shared/types/book';
 
 function App() {
   const [stocks, setStocks] = useState<Book[]>(data);

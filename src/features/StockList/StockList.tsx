@@ -1,6 +1,6 @@
 import React from 'react';
-import Book from '../models/book';
-import StockItem from './StockItem';
+import Book from '../../shared/types/book';
+import StockItem from '../components/StockItem';
 
 interface StockListProps {
     stocks: Book[];
