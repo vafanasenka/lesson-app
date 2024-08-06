@@ -1,29 +1,20 @@
 import './App.css';
 import data from './data/stocks.json';
 import StockList from './features/StockList/StockList';
-import { useEffect, useState } from 'react';
-import Book from './shared/types/book';
+import MousePosition from './features/MousePosition/MousePosition';
 
 function App() {
-  const [stocks, setStocks] = useState<Book[]>(data);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const updatedStocks = stocks.map(stock => {
-        const random = Math.random();
-        const diff = random * 10 - 5;
-        const newPrice = stock.price + diff;
-        return { ...stock, price: newPrice };
-      });
-
-      setStocks(updatedStocks);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [stocks]);
-
   return (
-      <StockList stocks={stocks} />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <StockList stocks={data} />
+          </div>
+          <div className="col-md-6">
+            <MousePosition />
+          </div>
+        </div>
+      </div>
   );
 }
 
