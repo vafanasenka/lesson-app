@@ -11,24 +11,18 @@ function App() {
         <div className="col-md-4">
           <StockList stocks={data} />
         </div>
-        <div className="col-md-4">
-          <MousePosition />
-        </div>
-        <div
-          id="weather-widget-container"
-          className="col-md-4"
-          style={{
-            position: "relative",
-            height: "600px",
-            border: "1px solid #ccc",
-          }}
-        >
+        <div id="grid-container" className="col-md-8 h-100 p-3 grid-container">
+          <div className="grid-cell"></div>
+          <div className="grid-cell"></div>
+          <div className="grid-cell"></div>
+          <div className="grid-cell"></div>
           <WeatherWidget
             location="New York"
             temperature={25}
             isDaytime={true}
-            bounds="#weather-widget-container"
+            bounds="#grid-container"
           />
+          <MousePosition />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
-import React from "react";
-import Draggable from "react-draggable";
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import React, { useState, useRef } from "react";
+import Draggable, { DraggableData, DraggableEvent } from "react-draggable";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 interface WeatherWidgetProps {
   location: string;
@@ -13,18 +13,28 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({
   location,
   temperature,
   isDaytime,
-  bounds
+  bounds,
 }) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const nodeRef = useRef(null);
+
+  const handleStop = (e: DraggableEvent, data: DraggableData) => {
+    const gridSize = 200; // Assuming each cell is 200x200px
+    const newX = Math.round(data.x / gridSize) * gridSize;
+    const newY = Math.round(data.y / gridSize) * gridSize;
+    setPosition({ x: newX, y: newY });
+  };
+
   return (
-    <Draggable bounds={bounds}>
-      <div className="card" style={{ width: "18rem", cursor: "move" }}>
+    <Draggable nodeRef={nodeRef} bounds={bounds} position={position} onStop={handleStop}>
+      <div ref={nodeRef} className="card" style={{ cursor: "move" }}>
         <div className="card-body">
+        <i className={`bi ${isDaytime ? "bi-sun" : "bi-moon"} display-4 weather-icon`}></i>
           <h5 className="card-title">{location}</h5>
           <h6 className="card-subtitle mb-2 text-muted">
             {isDaytime ? "Daytime" : "Nighttime"}
           </h6>
           <p className="card-text">{temperature}°C</p>
-          <i className={`bi ${isDaytime ? 'bi-sun' : 'bi-moon'} display-4`}></i>
         </div>
       </div>
     </Draggable>
