@@ -19,9 +19,12 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({
   const nodeRef = useRef(null);
 
   const handleStop = (e: DraggableEvent, data: DraggableData) => {
-    const gridSize = 200; // Assuming each cell is 200x200px
-    const newX = Math.round(data.x / gridSize) * gridSize;
-    const newY = Math.round(data.y / gridSize) * gridSize;
+    const gridSize = 220; // Assuming each cell is 220x220px
+    const gap = 10; // Gap between cells
+
+    const newX = Math.round(data.x / (gridSize + gap)) * (gridSize + gap);
+    const newY = Math.round(data.y / (gridSize + gap)) * (gridSize + gap);
+    
     setPosition({ x: newX, y: newY });
   };
 

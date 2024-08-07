@@ -8,7 +8,7 @@ const GridList: React.FC<GridListProps> = () => {
       <div className="w-100 p-3">
         <h3>Grid container</h3>
       </div>
-      <div className="w-100 p-3 grid-container">
+      <div className="p-3 grid-container">
         <div className="grid-cell">
           <WeatherWidget
             location="New York"
