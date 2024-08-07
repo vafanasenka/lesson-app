@@ -43,16 +43,18 @@
   grid-template-rows: repeat(2, 200px);
   gap: 10px;
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
 .grid-cell {
   width: 200px;
   height: 200px;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   box-sizing: border-box;
+  border-radius: 10px;
 }
 
 .weather-widget {
